@@ -36,7 +36,7 @@ Edit
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/chatverse.git
+   git clone https://github.com/shreeram800/chatverse-node-js-chat-application.git
    cd chatverse
 Install dependencies
 
