@@ -63,12 +63,13 @@ Frontend: HTML, CSS, JavaScript
 
 Protocol: WebSocket via Socket.IO
 
-📸 Screenshots
+## 📸 Screenshots
 Home Page	Chat Room
 
 Add screenshots to a screenshots/ folder if desired
 
-📦 Future Enhancements
+##📦 Future Enhancements
+
 🔐 JWT-based authentication
 
 💬 Message persistence with MongoDB
