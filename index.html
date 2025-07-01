@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatVerse - Join the Conversation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="home">
+  <div class="container">
+    <h1>Welcome to <span class="highlight">ChatVerse</span></h1>
+    <p>Connect with people around the world in real-time chat rooms. Just enter your name and choose a room to start chatting instantly!</p>
+
+    <form action="chat.html" onsubmit="return saveUserInfo()">
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <input type="text" id="room" placeholder="Enter room name" required />
+      <button type="submit">Join Chat</button>
+    </form>
+  </div>
+
+  <script>
+    function saveUserInfo() {
+      const username = document.getElementById("username").value;
+      const room = document.getElementById("room").value;
+      localStorage.setItem("username", username);
+      localStorage.setItem("room", room);
+      return true;
+    }
+  </script>
+</body>
+</html>

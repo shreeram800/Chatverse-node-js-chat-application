@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Room</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body class="chat">
+  <div class="chat-container">
+    <div class="chat-header">
+      <h2>Room: <span id="room-name"></span></h2>
+      <button onclick="window.location.href='index.html'">Leave</button>
+    </div>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <form id="chat-form">
+      <input id="message" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    const socket = io("http://localhost:3000");
+
+    const username = localStorage.getItem("username");
+    const room = localStorage.getItem("room");
+
+    document.getElementById("room-name").textContent = room;
+    socket.emit("joinRoom", { username, room });
+
+    document.getElementById("chat-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const message = document.getElementById("message").value;
+      socket.emit("chatMessage", message);
+      document.getElementById("message").value = "";
+    });
+
+    socket.on("message", (msg) => {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("message");
+      msgDiv.innerHTML = `<strong>${msg.sender}:</strong> ${msg.text}`;
+      document.getElementById("chat-box").appendChild(msgDiv);
+      msgDiv.scrollIntoView();
+    });
+  </script>
+</body>
+</html>
