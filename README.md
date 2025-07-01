@@ -64,7 +64,11 @@ Frontend: HTML, CSS, JavaScript
 Protocol: WebSocket via Socket.IO
 
 ## 📸 Screenshots
-Home Page	Chat Room
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
+
+### 💬 Chat Room
+![Chat Room](screenshots/chat.png)
 
 Add screenshots to a screenshots/ folder if desired
 
