@@ -65,10 +65,10 @@ Protocol: WebSocket via Socket.IO
 
 ## 📸 Screenshots
 ### 🏠 Home Page
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/Home.png)
 
 ### 💬 Chat Room
-![Chat Room](screenshots/chat.png)
+![Chat Room](screenshots/Chat.png)
 
 Add screenshots to a screenshots/ folder if desired
 
